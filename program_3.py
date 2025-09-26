@@ -9,10 +9,38 @@
 # the total inches of rainfall, and the average rainfall per month for the entire period.
 
 def main():
-    ######################
-    # WRITE YOUR CODE HERE
-    ######################    
+   
+    years = int(input("Enter the number of years: "))
+    
+   
+    total_rainfall = 0.0
+    total_months = years * 12
+    
+    
+    for year in range(1, years + 1):
+        print(f"\nYear {year}:")
+        
+        for month in range(1, 13):
+            while True:
+                try:
+                    rainfall = float(input(f"  Enter rainfall for month {month} (in inches): "))
+                    if rainfall < 0:
+                        print("    Rainfall cannot be negative. Please enter again.")
+                        continue
+                    break
+                except ValueError:
+                    print("    Invalid input. Please enter a numeric value.")
+            
+            total_rainfall += rainfall
+    
+   
+    average_rainfall = total_rainfall / total_months
+    
 
+    print("\n--- Rainfall Report ---")
+    print(f"Total months: {total_months}")
+    print(f"Total rainfall: {total_rainfall:.2f} inches")
+    print(f"Average rainfall per month: {average_rainfall:.2f} inches")
 
 if __name__ == '__main__':
     main()
