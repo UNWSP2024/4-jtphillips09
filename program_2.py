@@ -8,6 +8,17 @@ def main():
     ######################
     # WRITE YOUR CODE HERE
     ######################
+    
+    total_tickets = 0  # accumulator for total tickets
+    
+    num_movies = int(input("How many movies do you want to enter? "))
+
+    for _ in range(num_movies):
+        movie = input("Enter movie name: ")
+        tickets = int(input(f"How many tickets for '{movie}'? "))
+        total_tickets += tickets
+    
+    print(f"Total number of tickets desired: {total_tickets}")
 
 
 if __name__ == '__main__':
